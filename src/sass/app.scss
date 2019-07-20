@@ -1,0 +1,138 @@
+@import 'mixins';
+@import 'vedr';
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+}
+html {
+	@include box-sizing( border-box );
+}
+ 
+*, *:before, *:after { box-sizing: inherit; }
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main {
+        width: 600px;
+        margin: 2em 0 2em;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #999;
+        border-radius: 3px;
+        font-family: Oxygen, sans-serif;
+        webkit-font-smoothing: antialiased;
+
+        .topSection {
+            flex: 0 0 50%;
+            text-align: center;
+            background-color: #445a71;
+            color: #fff;
+            width: 100%;
+            .title {
+                margin: 16px 0 0;
+                font-size: .85em;
+                font-weight: normal;
+            }
+            .form {
+                margin: 1em 0 1em;
+                .input {
+                    background: #ffffffc7;
+                    border: none;
+                    width: 10em;
+                    height: 2em;
+                    padding: .5em .4em;
+                    margin: .5em;
+                    border-radius: 4px;
+                    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.23);
+
+                    &:focus {
+                        outline: 1px solid #8abeb2;
+                        border-radius: 4px;
+                    }
+                
+                }
+                .button {
+                    border: none;
+                    border-radius: 2px;
+                    box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.23);
+                    padding: .45em .8em;
+                    font-family: inherit;
+                    font-size: .8em;
+                    background: #fff;
+                    color: #353131;
+                    cursor: pointer;
+                    transition: all 300ms linear 0s;
+
+                    &:hover, &:focus {
+                        background: lighten(grey, 35%);
+
+                    }
+                    
+                }
+            }
+            
+        }
+        .bottomSection {
+            background: linear-gradient(180deg, #445a71 0%, rgba(255, 255, 255, 0.76) 100%), url(/components/images/wind-farm-1209784_1920.7fc6592b.jpg) center no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            
+            .bottomForCont {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-content: center;
+                 .innerContainer {
+                     width: 100%;
+                     height: 100%;
+                     display: flex;
+                     text-align: center;
+                     align-items: center;
+                     justify-content: space-around;
+                     padding: 0 .5em 0 .5em;
+                     color: darken(#445a71, 5%);
+                     
+                 
+            
+                    .forecastContainer {
+                        max-width: 20%;
+                        height: 150px;
+                        margin: 10% 0 5%;
+                        .item {
+                            width: 100%;
+                            height: 100%;
+                            font-size: inherit;
+                            padding: 0 .5em 0 .5em;
+
+                            .image {
+                                width: 3.2em;
+                                height: 3.2em;
+                            }
+                            .temp {
+                                font: {
+                                    size: .9em;
+                                    weight: bold;
+                                }
+                                
+
+                            }
+                            .cond-text {
+                                font-size: .75em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.city { 
+    font-size: .95em;
+    margin: 1.5em 0 .3em 0;
+
+}
+.iconTemp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin: 0;
+    font-weight: bold;
+    .icon{
+        width: 2.1em;
+    }
+}
+.topText {
+    font-size: .95em;
+    margin-top: .5em;
+}
