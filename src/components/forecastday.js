@@ -14,14 +14,7 @@ export default class Forecastday extends React.Component {
         if(forecastDate === today) { return 'Today'}
         else{return forecastDate}
     }
-    
-    // getForecastDate = () => {
-    //     const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    //      const date = days[new Date().getDay()];
-    //      const nextIndex = (days.indexOf(date) + 1) % days.length;
-    //      return days[nextIndex];
-         
-    //  }
+
     
     render() {
         const { day } = this.props;

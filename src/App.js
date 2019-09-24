@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import Title from "./components/Title";
 import Form from "./components/Form";
 import Vedr from "./components/Vedr";
@@ -14,7 +15,7 @@ import axios from 'axios';
 const APIXU_KEY = "80a2b19015b54e628e5190124191206";
 class App extends React.Component {
   state = {
-    cityName: 'Bratislava', //neskor aktualna poloha..
+    cityName: 'Bratislava', //aktualna poloha neskor..
     temp_c: null,
     isDay: 1,
     text: '',
@@ -29,7 +30,7 @@ class App extends React.Component {
   axios.get(`https://api.apixu.com/v1/forecast.json?key=${APIXU_KEY}&q=${cityName}&days=${dayNum}`)
     .then(res => {
       const {data} = res
-      console.log(res.data);
+      // console.log(res.data);
         this.setState({
           cityName,
           temp_c: data.current.temp_c,
@@ -42,25 +43,20 @@ class App extends React.Component {
     })
   }
 
-  getVedr = (e) => {
+  getWeather = (e) => {
     e.preventDefault();
     const cityName = e.target.elements.cityName.value;
     const {dayNum} = this.state;
     this.getApi(cityName, dayNum)
-    
   }
+  
   
  componentDidMount() {
     const { cityName, dayNum } = this.state;
-     this.getDate()
-    // console.log(this.getDate())
     this.getApi(cityName, dayNum)
   }
   
-  getDate = () => {
-    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    return days[new Date().getDay()];
-  }
+
 
   
   render() {
@@ -79,16 +75,11 @@ class App extends React.Component {
               text={text}
               iconURL={iconURL}
             />
-            <Title getDate={this.getDate} />
-            <Form getVedr={this.getVedr}/>
-            
+            <Title  />
+            <Form getWeather={this.getWeather}/>
           </div>
           <div className="bottomSection">
-            <Forecast //getForecastDate={this.getForecastDate}
-              forecastday={forecastday}
-              
-
-            />
+            <Forecast forecastday={forecastday}/>
           </div>
         </div>
       </div>
