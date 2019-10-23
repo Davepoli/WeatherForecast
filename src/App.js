@@ -12,7 +12,7 @@ import "./sass/app.scss";
 import axios from 'axios';
 
 
-const APIXU_KEY = "80a2b19015b54e628e5190124191206";
+const APIXU_KEY = '80a2b19015b54e628e5190124191206'; //nefunkcna API, najst inu ako weatherstack-platena vrs. pre predpoved
 class App extends React.Component {
   state = {
     cityName: 'Bratislava', //aktualna poloha neskor..
@@ -23,7 +23,7 @@ class App extends React.Component {
     forecastday: [],
     dayNum: 4,
     localtime: '',
-    date: ""
+    date: ''
   }
 
   getApi = (cityName, dayNum) => {
@@ -56,8 +56,6 @@ class App extends React.Component {
     this.getApi(cityName, dayNum)
   }
   
-
-
   
   render() {
     
