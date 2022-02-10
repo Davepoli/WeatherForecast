@@ -34,6 +34,6 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "eslint-plugin-react": "^7.14.3",
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   }
 }
